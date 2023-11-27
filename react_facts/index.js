@@ -1,21 +1,40 @@
-//import React from "react"
-//import ReactDOM from "react-dom"
+//import React from react;
+//import ReactDOM from react-dom;
 
-//Component:
-function Page() {
+function Header() {
+    return (
+        <nav>
+            <img src="./react_logo.png" width="40px" />
+        </nav>
+    );
+}
+
+function MyList() {
     return (
         <div>
-            <img width="40px" src="./react_logo.png" />
-            <h1>Fun facts about React</h1>
-            <ul>
-                <li>Was first released in 2013</li>
-                <li>Was originally created by Jordan Walke</li>
-                <li>Has well over 100K stars on GitHub</li>
-                <li>Is maintained by Facebook</li>
-                <li>Powers thousands of enterprise apps, including mobile apps</li>
-            </ul>
+            <h1>List of reasons:</h1>
+            <ol>
+                <li>First reason</li>
+                <li>Second reason</li>
+                <li>Third reason</li>
+            </ol>
         </div>
     );
 }
 
-ReactDOM.render(<Page />, document.getElementById("root"));
+function Footer() {
+    return (
+        <footer>
+            <small>2023 by the keyboard of Krekog</small>
+        </footer>
+    )
+}
+
+ReactDOM.render(
+    <div>
+        <Header />
+        <MyList />
+        <Footer />
+    </div>,
+    document.getElementById("root")
+);
