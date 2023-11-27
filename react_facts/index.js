@@ -3,8 +3,13 @@
 
 function Header() {
     return (
-        <nav>
-            <img src="./react_logo.png" width="40px" />
+        <nav className="nav-bar">
+            <img className="nav-logo" src="./react_logo.png" />
+            <ul className="nav-items">
+                <li>Pricing</li>
+                <li>About</li>
+                <li>Contact</li>
+            </ul>
         </nav>
     );
 }
@@ -24,7 +29,7 @@ function MyList() {
 
 function Footer() {
     return (
-        <footer>
+        <footer className="footer">
             <small>2023 by the keyboard of Krekog</small>
         </footer>
     )
