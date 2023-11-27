@@ -30,11 +30,17 @@ function Footer() {
     )
 }
 
+function Page() {
+    return (
+        <div>
+            <Header />
+            <MyList />
+            <Footer />
+        </div>
+    )
+}
+
 ReactDOM.render(
-    <div>
-        <Header />
-        <MyList />
-        <Footer />
-    </div>,
+    <Page />,
     document.getElementById("root")
 );
