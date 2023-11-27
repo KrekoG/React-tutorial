@@ -1,11 +1,12 @@
-const header = document.createElement("h1");
-header.textContext = "Header over here!";
-header.className = "Style";
-document.getElementById("root").append(header);
-console.log(header)
+const navbar = (
+    <nav>
+        <h1 className="Style">Header over here</h1>
+        <ul>
+            <li>Pricing</li>
+            <li>About</li>
+            <li>Contact</li>
+        </ul>
+    </nav>
+);
 
-const element = <h1 className="Style">Header over here</h1>;
-
-console.log(element)
-
-ReactDOM.render(element, document.getElementById("root"));
+ReactDOM.render(navbar, document.getElementById("root"));
