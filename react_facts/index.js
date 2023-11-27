@@ -1,0 +1,1 @@
+ReactDOM.render(<ul><li>first</li><li>second</li></ul>, document.getElementById("root"))
