@@ -1,23 +1,9 @@
-function Navbar() {
-    return (
-        <nav>
-            <p>this is a navbar</p>
-        </nav>
-    );
-}
-
-function MainContent() {
-    return (
-    <div>
-        <h1>This is the main content</h1>
-    </div>
-    );
-}
-
 ReactDOM.render(
-    <div>
-        <Navbar />
-        <MainContent />
-    </div>,
+    <h1 className="Style">Header over here</h1>,
     document.getElementById("root")
 )
+
+//const header = document.createElement("h1");
+//header.textContext = "Header over here!";
+//header.className = "Style";
+//document.getElementById("root").append(header);
