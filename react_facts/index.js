@@ -1,15 +1,18 @@
 //import React from "react"
 //import ReactDOM from "react-dom"
 
-const navbar = (
-    <nav>
-        <h1 className="Style">Header over here</h1>
+const page = (
+    <div>
+        <img width="40px" src="./react_logo.png" />
+        <h1>Fun facts about React</h1>
         <ul>
-            <li>Pricing</li>
-            <li>About</li>
-            <li>Contact</li>
+            <li>Was first released in 2013</li>
+            <li>Was originally created by Jordan Walke</li>
+            <li>Has well over 100K stars on GitHub</li>
+            <li>Is maintained by Facebook</li>
+            <li>Powers thousands of enterprise apps, including mobile apps</li>
         </ul>
-    </nav>
+    </div>
 );
 
-ReactDOM.render(navbar, document.getElementById("root"));
+ReactDOM.render(page, document.getElementById("root"));
