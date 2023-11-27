@@ -1,7 +1,6 @@
 //source: https://www.educative.io/answers/how-to-create-a-react-application-with-webpack
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CopyPlugin = require("copy-webpack-plugin");
 
 module.exports = {
   output: {
@@ -12,12 +11,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: "src/index.html", // to import index.html file inside index.js
     }),
-    new CopyPlugin({
-      patterns: [
-        { from: "src/style", to: "css"},
-        { from: "src/images", to: "img"},
-      ]
-    })
   ],
   devServer: {
     port: 3030, // you can change the port
