@@ -1,3 +1,6 @@
+//import React from "react"
+//import ReactDOM from "react-dom"
+
 const navbar = (
     <nav>
         <h1 className="Style">Header over here</h1>
