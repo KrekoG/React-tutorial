@@ -1,0 +1,32 @@
+.header {
+    text-align: center;
+}
+
+.button {
+    background-color: $button-colour;
+    border-radius: 10px;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+}
+
+.common-name {
+    font-size: 2.5em;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.latin-name {
+    font-size: 1.2em;
+    color: $gold;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.nick-name {
+    font-size: 0.9em;
+    color: $silver;
+    margin-top: 0;
+}

@@ -1,0 +1,10 @@
+@import "./colours";
+@import "./socialMediaIcons";
+@import "./card";
+@import "./article";
+@import "./header";
+
+body {
+    background-color: $background-colour;
+    color: $font-colour;
+}
