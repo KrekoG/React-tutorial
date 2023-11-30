@@ -3,21 +3,22 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 export default function Contact(props) {
-    console.log(props);
+    const {name, phone, email, img} = props;
+
     return (
         <div className="contact">
             <img
                 className="contact-img"
-                src={props.img}
+                src={img}
             />
-            <h2 className="contact-name">{props.name}</h2>
+            <h2 className="contact-name">{name}</h2>
             <div>
                 <FontAwesomeIcon className="contact-icon" icon={faPhone} />
-                {props.phone}
+                {phone}
             </div>
             <div>
                <FontAwesomeIcon className="contact-icon" icon={faEnvelope} />
-               {props.email}
+               {email}
             </div>
         </div>
     )
