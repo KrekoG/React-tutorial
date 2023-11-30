@@ -1,0 +1,19 @@
+.nav {
+    background-color: $background-colour;
+    position: sticky;
+    z-index: 999;
+    top: -10px;
+    box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
+}
+
+.nav-title {
+    font-weight: 600;
+    letter-spacing: -1;
+    color: $airbnb-brand-colour;
+    padding:15px;
+}
+
+.nav-brand-name {
+    margin-left: 5px;
+    font-size: 16px;
+}

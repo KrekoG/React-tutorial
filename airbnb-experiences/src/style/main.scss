@@ -1,0 +1,15 @@
+@import "colours";
+@import "NavBar";
+@import "Hero";
+@import "Cards";
+@import "Card";
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    background-color: $background-colour;
+}
