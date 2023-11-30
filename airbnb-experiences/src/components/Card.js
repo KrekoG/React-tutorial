@@ -8,7 +8,7 @@ export default function Card(props) {
             <div className="card-image-container">
                 <img className="card-image" src={props.img} />
             </div>
-            {props.soldOut && <span className="card-status-signifier">SOLD OUT</span>}
+            {props.openSpots == 0 && <span className="card-status-signifier">SOLD OUT</span>}
             <div className="card-stats">
                 <span className="card-rating">
                     <FontAwesomeIcon className="card-star" icon={faStar} />

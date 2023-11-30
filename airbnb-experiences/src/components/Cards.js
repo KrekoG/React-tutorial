@@ -13,7 +13,7 @@ export default function Cards() {
                 country="USA"
                 title="Life lessons with this swimmer dude, who's name I do not know."
                 price={136}
-                soldOut={true}
+                openSpots={0}
             />
         </section>
     )
