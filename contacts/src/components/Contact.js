@@ -2,9 +2,7 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
-export default function Contact(props) {
-    const {name, phone, email, img} = props;
-
+export default function Contact({name, phone, email, img}) {
     return (
         <div className="contact">
             <img
