@@ -3,18 +3,27 @@ import { faStar, faCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Card(props) {
+    let badgeText
+    let showBadge = false;
+
+    if (props.openSpots == 0) {
+        badgeText = "SOLD OUT"
+    } else if (props.location === "Online") {
+        badgeText = "ONLINE"
+    }
+
     return (
         <div className="card">
             <div className="card-image-container">
                 <img className="card-image" src={props.img} />
             </div>
-            {props.openSpots == 0 && <span className="card-status-signifier">SOLD OUT</span>}
+            {badgeText && <span className="card-badge">{badgeText}</span>}
             <div className="card-stats">
                 <span>
                     <FontAwesomeIcon className="card-star" icon={faStar} />
                     {props.rating}
                     <span className="gray-font">
-                        ({props.reviewCount}) <FontAwesomeIcon icon={faCircle} /> {props.country}
+                        ({props.reviewCount}) <FontAwesomeIcon icon={faCircle} /> {props.location}
                     </span>
                 </span>
             </div>

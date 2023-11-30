@@ -9,7 +9,7 @@ export default function Cards() {
             img={card.img}
             rating={card.rating}
             reviewCount={card.reviewCount}
-            country={card.country}
+            location={card.location}
             title={card.title}
             price={card.price}
             openSpots={card.openSpots}
