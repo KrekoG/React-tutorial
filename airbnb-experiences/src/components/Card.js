@@ -2,7 +2,7 @@ import React from "react";
 import { faStar, faCircle } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export default function Card(props) {
+export default function Card({key, props}) {
     let badgeText
     let showBadge = false;
 
