@@ -4,13 +4,13 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Card(props) {
     return (
-        <section className="card">
+        <div className="card">
             <div className="card-image-container">
                 <img className="card-image" src={props.img} />
             </div>
             {props.openSpots == 0 && <span className="card-status-signifier">SOLD OUT</span>}
             <div className="card-stats">
-                <span className="card-rating">
+                <span>
                     <FontAwesomeIcon className="card-star" icon={faStar} />
                     {props.rating}
                     <span className="gray-font">
@@ -18,8 +18,8 @@ export default function Card(props) {
                     </span>
                 </span>
             </div>
-            <p className="card-excerpt">{props.title}</p>
-            <p className="card-price"><strong>From ${props.price}</strong> / person</p>
-        </section>
+            <p>{props.title}</p>
+            <p><strong>From ${props.price}</strong> / person</p>
+        </div>
     );
 }

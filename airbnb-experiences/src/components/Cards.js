@@ -1,20 +1,24 @@
 import React from "react";
 import Card from "./Card";
-import swimmer from "../img/swimmer.jpg";
-
+import cardsData from "../../cardsData.js";
 
 export default function Cards() {
+    const cardElements = cardsData.map(card =>
+        <Card
+            key={card.id}
+            img={card.img}
+            rating={card.rating}
+            reviewCount={card.reviewCount}
+            country={card.country}
+            title={card.title}
+            price={card.price}
+            openSpots={card.openSpots}
+        />
+    )
+
     return (
         <section className="cards">
-            <Card
-                img={swimmer}
-                rating={5.0}
-                reviewCount={6}
-                country="USA"
-                title="Life lessons with this swimmer dude, who's name I do not know."
-                price={136}
-                openSpots={0}
-            />
+            {cardElements}
         </section>
     )
 }
