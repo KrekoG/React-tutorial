@@ -6,7 +6,7 @@ export default function Navbar() {
         <nav className="nav">
             <h1 className="nav-title">
                 <FontAwesomeIcon icon="fa-brands fa-airbnb" />
-                <span className="nav-brandname">airbnb</span>
+                <span className="nav-brand-name">airbnb</span>
             </h1>
         </nav>
     );
