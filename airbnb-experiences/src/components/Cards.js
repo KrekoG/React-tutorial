@@ -4,16 +4,7 @@ import cardsData from "../../cardsData.js";
 
 export default function Cards() {
     const cardElements = cardsData.map(card =>
-        <Card
-            key={card.id}
-            img={card.img}
-            rating={card.rating}
-            reviewCount={card.reviewCount}
-            location={card.location}
-            title={card.title}
-            price={card.price}
-            openSpots={card.openSpots}
-        />
+        <Card key={card.id} {...card} />
     )
 
     return (
