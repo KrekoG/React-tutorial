@@ -1,0 +1,70 @@
+$background-colour: #E8DCCA;
+$font: darken($background-colour, 55%);
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: $font;
+    margin: 0;
+    background-color: $background-colour;
+}
+
+.navbar {
+    position: sticky;
+    z-index: 999;
+    top: -10px;
+    box-shadow: 0 -6px 10px 5px rgba(0,0,0,0.5);
+    padding: 1px 25px 1px 25px;
+    background-color: lighten($background-colour, 5);
+    text-align:center;
+}
+
+.destination {
+    text-align:center;
+    padding: 0 5px 0 15px;
+    max-width: 650px;
+    margin:auto;
+}
+
+.destination p {
+    text-align: justify;
+}
+
+.destination-img-container {
+    position: relative;
+}
+.destination-img {
+    float:left;
+    width: 300px;
+    margin-right: 10px;
+}
+
+.destination-date {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: $background-colour;
+    border-radius: 4px;
+    padding: 0 5px 0 5px;
+    opacity: 0.7;
+}
+
+.city {
+    margin-top:40px;
+    margin-bottom: 0;
+}
+.city a {
+    text-decoration: none;
+    color:$font;
+}
+.city a:hover {
+    color:lighten($font, 30);
+}
+
+.country {
+    margin-top: 0;
+}
+
