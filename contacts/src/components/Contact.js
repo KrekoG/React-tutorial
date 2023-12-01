@@ -3,29 +3,29 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faStar } from '@fortawesome/free-solid-svg-icons'
 
 export default function Contact(props) {
-    const {name, phone, email, img, isFavorite} = props;
-
-    const [favorite, setFavorite] = React.useState(isFavorite)
+    const [info, setInfo] = React.useState(props)
 
     function toggleFavorite() {
-        setFavorite(prevState => !prevState)
+        setInfo(prevInfo => {
+            return {...prevInfo, isFavorite: !prevInfo.isFavorite}
+        })
     }
 
     return (
-        <div className={`contact ${favorite ? "favorite-contact" : "non-favorite-contact"}`}>
+        <div className={`contact ${info.isFavorite ? "favorite-contact" : "non-favorite-contact"}`}>
             <img
                 onClick={toggleFavorite}
                 className="contact-img"
-                src={img}
+                src={info.img}
             />
-            <h2 className="contact-name">{name} {favorite && <FontAwesomeIcon className="contact-favorite-icon" icon={faStar} />}</h2>
+            <h2 className="contact-name">{info.name} {info.isFavorite && <FontAwesomeIcon className="contact-favorite-icon" icon={faStar} />}</h2>
             <div>
                 <FontAwesomeIcon className="contact-icon" icon={faPhone} />
-                {phone}
+                {info.phone}
             </div>
             <div>
                <FontAwesomeIcon className="contact-icon" icon={faEnvelope} />
-               {email}
+               {info.email}
             </div>
         </div>
     )
