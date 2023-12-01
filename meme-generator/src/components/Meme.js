@@ -2,12 +2,18 @@ import React from "react"
 import memesData from '../../memesData.js'
 
 export default function Meme() {
-    const [memeImage, setMemeImage] = React.useState("");
+    const [allMemesImages, setAllMemesImages] = React.useState(memesData)
+    const [meme, setMeme] = React.useState({
+        topText: "",
+        bottomText: "",
+        randomImage: ""
+    });
+
 
     function buttonClickHandler() {
-        const memes = memesData.data.memes;
+        const memes = allMemesImages.data.memes;
         const randomMemeIndex = Math.floor(Math.random() * memes.length);
-        setMemeImage(memes[randomMemeIndex].url)
+        setMeme(prevMeme => ({...prevMeme, randomImage: memes[randomMemeIndex].url}))
     }
 
     return (
@@ -31,7 +37,7 @@ export default function Meme() {
                 value="Get a new meme image 🖼️"
             />
 
-            <img className="memage" src={memeImage} />
+            <img className="memage" src={meme.randomImage} />
         </section>
     )
 }
