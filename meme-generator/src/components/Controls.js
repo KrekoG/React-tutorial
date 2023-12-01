@@ -1,13 +1,11 @@
 import React from 'react'
+import memesData from '../../memesData.js'
 
 export default function Controls() {
-    function buttonClickHandler() {
-        console.log('the button was clicked!')
-    }
-
-    function hoverHandler() {
-        console.log('the hover has happened!')
-    }
+    const memes = memesData.data.memes;
+    console.log(
+        memes[Math.floor(Math.random() * memes.length)]
+    );
 
     return (
         <section>
@@ -18,14 +16,12 @@ export default function Controls() {
                     placeholder="Top text"
                 />
                 <input
-                    onMouseOver={hoverHandler}
                     className="controls-text"
                     type="text"
                     placeholder="Bottom text"
                 />
             </div>
             <input
-                onClick={buttonClickHandler}
                 className="controls-get-new-button"
                 type="button"
                 value="Get a new meme image 🖼️"
