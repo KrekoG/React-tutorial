@@ -1,0 +1,25 @@
+$main: #66CC55;
+$font: #FAFAFA;
+
+body {
+    background-color: $main;
+    color: $font;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.AddButton {
+    padding: 15px;
+    border-radius: 30px;
+    color: $font;
+    background-color: $main;
+    border-color: $font;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.AddButton:hover {
+    color: $main;
+    background-color: $font;
+}
