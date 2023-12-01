@@ -9,8 +9,22 @@ export default function Controls() {
         console.log(url);
     }
 
+    const [things, setThings] = React.useState(["Thing #1", "Thing #2"]);
+
+    function addThing() {
+        setThings(prevState => [...prevState, `Thing #${things.length + 1}`]);
+    }
+
+    const pElements = things.map(thing => <p key={thing}>{thing}</p>);
+
     return (
         <section>
+            <input
+                onClick={addThing}
+                className="controls-get-new-button"
+                type="button"
+                value="Addd things"
+            />
             <div className="controls-text-container">
                 <input
                     className="controls-text"
@@ -23,6 +37,7 @@ export default function Controls() {
                     placeholder="Bottom text"
                 />
             </div>
+            {pElements}
             <input
                 onClick={buttonClickHandler}
                 className="controls-get-new-button"
