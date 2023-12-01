@@ -1,0 +1,26 @@
+.controls-get-new-button {
+    @include gradient-background;
+    @include bright-font;
+}
+
+.controls-text-container {
+    display: flex;
+    gap:15px;
+}
+
+@mixin round-wide-input {
+    border-radius: 5px;
+    padding:12px;
+    width: 100%;
+}
+
+.controls-text {
+    @include round-wide-input;
+    margin-bottom: 15px;
+    border: 1px solid $light-gray;
+}
+
+.controls-get-new-button {
+    @include round-wide-input;
+    border-width: 0px;
+}

@@ -1,0 +1,8 @@
+@mixin gradient-background {
+    background: $header-colour;
+    background: linear-gradient(90deg, darken($header-colour, 10) 0%, lighten($header-colour, 5) 100%);
+}
+
+@mixin bright-font {
+    color: $bright-font-colour;
+}

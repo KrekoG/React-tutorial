@@ -1,0 +1,20 @@
+$header-colour: #8000A0;
+$bright-font-colour: #FEFEFE;
+$light-gray: #DDDDDD;
+
+@import "mixins";
+@import "controls";
+@import "header";
+
+* {
+    box-sizing: border-box;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+.main {
+    padding: 20px;
+}
