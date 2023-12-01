@@ -9,23 +9,27 @@ export default function Controls() {
         console.log(url);
     }
 
-    const [things, setThings] = React.useState(["Thing #1", "Thing #2"]);
+    const [state, setState] = React.useState("original state");
 
-    function addThing() {
-        setThings(prevState => [...prevState, `Thing #${things.length + 1}`]);
+    function stateSetter() {
+        setState(prevState => {
+            if (prevState === "Yes")
+                return "No";
+            else {
+                return "Yes";
+            }
+        });
     }
-
-    const pElements = things.map(thing => <p key={thing}>{thing}</p>);
 
     return (
         <section>
-            <input
-                onClick={addThing}
-                className="controls-get-new-button"
-                type="button"
-                value="Addd things"
-            />
             <div className="controls-text-container">
+                <input
+                    onClick={stateSetter}
+                    type="button"
+                    value="Change"
+                />
+                {state}
                 <input
                     className="controls-text"
                     type="text"
@@ -37,7 +41,6 @@ export default function Controls() {
                     placeholder="Bottom text"
                 />
             </div>
-            {pElements}
             <input
                 onClick={buttonClickHandler}
                 className="controls-get-new-button"
