@@ -6,9 +6,7 @@ export default function Contact(props) {
     const [info, setInfo] = React.useState(props)
 
     function toggleFavorite() {
-        setInfo(prevInfo => {
-            return {...prevInfo, isFavorite: !prevInfo.isFavorite}
-        })
+        setInfo(prevInfo => ({...prevInfo, isFavorite: !prevInfo.isFavorite}))
     }
 
     return (
