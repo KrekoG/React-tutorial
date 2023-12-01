@@ -2,10 +2,12 @@ import React from 'react'
 import memesData from '../../memesData.js'
 
 export default function Controls() {
-    const memes = memesData.data.memes;
-    console.log(
-        memes[Math.floor(Math.random() * memes.length)]
-    );
+    function buttonClickHandler() {
+        const memes = memesData.data.memes;
+        const randomIndex = Math.floor(Math.random() * memes.length);
+        const url = memes[randomIndex].url;
+        console.log(url);
+    }
 
     return (
         <section>
@@ -22,6 +24,7 @@ export default function Controls() {
                 />
             </div>
             <input
+                onClick={buttonClickHandler}
                 className="controls-get-new-button"
                 type="button"
                 value="Get a new meme image 🖼️"
