@@ -8,6 +8,7 @@ export default function App() {
         email: "",
         comments: "",
         isFriendly: true,
+        employment: "unemployed",
     })
 
     function handleChange(event) {
@@ -23,8 +24,10 @@ export default function App() {
 
     return (
         <main>
+            <h1>Form practice</h1>
             <form>
                 <input
+                    className="input-field"
                     type="text"
                     placeholder="First Name"
                     onChange={handleChange}
@@ -32,6 +35,7 @@ export default function App() {
                     name="firstName"
                 />
                 <input
+                    className="input-field"
                     type="text"
                     placeholder="Last Name"
                     onChange={handleChange}
@@ -39,6 +43,7 @@ export default function App() {
                     name="lastName"
                 />
                 <input
+                    className="input-field"
                     type="email"
                     placeholder="Email address"
                     onChange={handleChange}
@@ -47,12 +52,13 @@ export default function App() {
                 />
 
                 <textarea
+                    className="input-field"
                     placeholder="Your message here"
                     onChange={handleChange}
                     value={formData.comments}
                     name="comments"
                 />
-                <div>
+                <div className="input-field">
                     <input
                         id="isFriendly"
                         type="checkbox"
@@ -62,8 +68,47 @@ export default function App() {
                     />
                     <label htmlFor="isFriendly">Are you friendly?</label>
                 </div>
+                <fieldset className="input-field">
+                    <legend>Current employment status</legend>
+                    <span>
+                        <input
+                            type="radio"
+                            onChange={handleChange}
+                            name="employment"
+                            id="unemployed"
+                            value="unemployed"
+                            checked={formData.employment === "unemployed"}
+                        />
+                        <label htmlFor="unemployed">Unemployed</label>
+                    </span>
+                    <span>
+                        <input
+                            type="radio"
+                            onChange={handleChange}
+                            name="employment"
+                            id="part-time"
+                            value="part-time"
+                            checked={formData.employment === "part-time"}
+                        />
+                        <label htmlFor="part-time">Part-time</label>
+                    </span>
+                    <span>
+                        <input
+                            type="radio"
+                            onChange={handleChange}
+                            name="employment"
+                            id="full-time"
+                            value="full-time"
+                            checked={formData.employment === "full-time"}
+                        />
+                        <label htmlFor="full-time">Full-time</label>
+                    </span>
+                </fieldset>
             </form>
-            <button onClick={(() => {console.log(formData)})}>log</button>
+            <button
+                className="input-field"
+                onClick={(() => {console.log(formData)})}
+            >log</button>
         </main>
     )
 }

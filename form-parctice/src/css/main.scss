@@ -1,13 +1,20 @@
-main, form {
+$border-colour: rgb(118, 118, 118);
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+main, form, fieldset {
     display: flex;
     flex-direction: column;
 }
 
-input, textarea, button {
+.input-field {
     margin-bottom: 4px;
     padding: 5px;
-    border-width: 1px;
     border-radius: 6px;
+    border: $border-colour solid 1px;
+    font-size: 1rem;
 }
 
 button {
