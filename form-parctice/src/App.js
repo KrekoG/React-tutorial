@@ -14,28 +14,32 @@ export default function App() {
         )
     }
 
-    console.log(formData)
-
     return (
-        <form>
-            <input
-                type="text"
-                placeholder="First Name"
-                onChange={handleChange}
-                name="firstName"
-            />
-            <input
-                type="text"
-                placeholder="Last Name"
-                onChange={handleChange}
-                name="lastName"
-            />
-            <input
-                type="email"
-                placeholder="Email address"
-                onChange={handleChange}
-                name="email"
-            />
-        </form>
+        <main>
+            <form>
+                <input
+                    type="text"
+                    placeholder="First Name"
+                    onChange={handleChange}
+                    value={formData.firstName}
+                    name="firstName"
+                />
+                <input
+                    type="text"
+                    placeholder="Last Name"
+                    onChange={handleChange}
+                    value={formData.lastName}
+                    name="lastName"
+                />
+                <input
+                    type="email"
+                    placeholder="Email address"
+                    onChange={handleChange}
+                    value={formData.email}
+                    name="email"
+                />
+            </form>
+            <button onClick={(() => {console.log(formData)})}>log</button>
+        </main>
     )
 }
