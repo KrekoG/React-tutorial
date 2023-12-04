@@ -25,9 +25,8 @@ export default function App() {
 
     const boxElements = boxes.map(box =>
         <Box
-            handleClick={boxClickHandler}
+            handleClick={() => boxClickHandler(box.id)}
             key={box.id}
-            id={box.id}
             on={box.on}
         />
     )
