@@ -14,12 +14,9 @@ export default function App() {
     }
 
     function boxClickHandler(id) {
-        setBoxes(prev => prev.map(obj => {
-            if (obj.id === id) {
-                obj.on = !obj.on
-            }
-            return obj;
-        }))
+        setBoxes(prev => prev.map(obj =>
+            obj.id === id ? {...obj, on: !obj.on} : obj
+        ))
     }
 
     const boxElements = boxes.map(box =>
