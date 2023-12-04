@@ -9,6 +9,7 @@ export default function App() {
         comments: "",
         isFriendly: true,
         employment: "unemployed",
+        favoriteColour: "",
     })
 
     function handleChange(event) {
@@ -21,6 +22,16 @@ export default function App() {
             })
         )
     }
+
+    const colourOptions = ["red", "orange", "yellow", "green", "blue", "indigo", "violet", "pink"].map(
+        colour =>
+        <option
+            key={colour}
+            value={colour}
+        >
+            {colour.charAt(0).toUpperCase() + colour.slice(1)}
+        </option>
+    )
 
     return (
         <main>
@@ -104,6 +115,17 @@ export default function App() {
                         <label htmlFor="full-time">Full-time</label>
                     </span>
                 </fieldset>
+                <label className="select-label" htmlFor="favoriteColour">What is your favorite colour?</label>
+                <select
+                    className="input-field"
+                    id="favoriteColour"
+                    name="favoriteColour"
+                    value={formData.favoriteColour}
+                    onChange={handleChange}
+                >
+                    <option value="">Please select a colour</option>
+                    {colourOptions}
+                </select>
             </form>
             <button
                 className="input-field"
