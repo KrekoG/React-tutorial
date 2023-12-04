@@ -7,9 +7,9 @@ export default function App() {
         lastName: "",
     })
 
-    function handleChange(event, attribute) {
+    function handleChange(event) {
         setFormData(prev =>
-            ({...prev, [attribute]: event.target.value})
+            ({...prev, [event.target.name]: event.target.value})
         )
     }
 
@@ -20,12 +20,14 @@ export default function App() {
             <input
                 type="text"
                 placeholder="First Name"
-                onChange={event => handleChange(event, "firstName")}
+                onChange={handleChange}
+                name="firstName"
             />
             <input
                 type="text"
                 placeholder="Last Name"
-                onChange={event => handleChange(event, "lastName")}
+                onChange={handleChange}
+                name="lastName"
             />
         </form>
     )
