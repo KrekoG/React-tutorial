@@ -1,15 +1,13 @@
-main {
+main, form {
     display: flex;
     flex-direction: column;
 }
 
-form {
-    display: flex;
-    flex-direction: column;
-}
-
-input {
+input, textarea, button {
     margin-bottom: 4px;
+    padding: 5px;
+    border-width: 1px;
+    border-radius: 6px;
 }
 
 button {
