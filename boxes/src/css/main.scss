@@ -1,0 +1,19 @@
+$box-colour: #ccc;
+$dark-mode-box-colour: #222;
+
+
+.box {
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    margin: 1px;
+    border: $box-colour solid 1px;
+}
+
+.box.on {
+    background-color: $box-colour;
+}
+
+.dark-mode .box.on {
+    background-color: $dark-mode-box-colour;
+}
