@@ -13,12 +13,22 @@ export default function App() {
         backgroundColor: darkMode ? "#666666" : "#F8F8F8"
     }
 
-    function boxClickHandler() {
-        setBoxes(prev => [...prev, ])
+    function boxClickHandler(id) {
+        setBoxes(prev => prev.map(obj => {
+            if (obj.id === id) {
+                obj.on = !obj.on
+            }
+            return obj;
+        }))
     }
 
     const boxElements = boxes.map(box =>
-        <Box key={box.id} on={box.on} handleClick={boxClickHandler} />
+        <Box
+            handleClick={boxClickHandler}
+            key={box.id}
+            id={box.id}
+            on={box.on}
+        />
     )
 
     return (
