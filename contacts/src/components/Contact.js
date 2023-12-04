@@ -2,6 +2,8 @@ import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPhone, faEnvelope, faStar } from '@fortawesome/free-solid-svg-icons'
 
+import Star from './Star'
+
 export default function Contact(props) {
     const [info, setInfo] = React.useState(props)
 
@@ -11,12 +13,8 @@ export default function Contact(props) {
 
     return (
         <div className={`contact ${info.isFavorite ? "favorite-contact" : "non-favorite-contact"}`}>
-            <img
-                onClick={toggleFavorite}
-                className="contact-img"
-                src={info.img}
-            />
-            <h2 className="contact-name">{info.name} {info.isFavorite && <FontAwesomeIcon className="contact-favorite-icon" icon={faStar} />}</h2>
+            <img className="contact-img" src={info.img} />
+            <h2 className="contact-name">{info.name} <Star isFilled={info.isFavorite} handleClick={toggleFavorite} /></h2>
             <div>
                 <FontAwesomeIcon className="contact-icon" icon={faPhone} />
                 {info.phone}
