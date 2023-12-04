@@ -19,6 +19,10 @@ export default function App() {
         ))
     }
 
+    function toggleDarkMode() {
+        setDarkMode(prev => !prev)
+    }
+
     const boxElements = boxes.map(box =>
         <Box
             handleClick={boxClickHandler}
@@ -29,8 +33,11 @@ export default function App() {
     )
 
     return (
-        <main style={mainStyles} className={`${darkMode ? "dark-mode" : ""}`}>
-            {boxElements}
+        <main className={`${darkMode ? "dark-mode" : ""}`}>
+            <button className="dark-mode-button" onClick={toggleDarkMode}>{darkMode? "light mode" : "dark mode"}</button>
+            <div className="box-container" style={mainStyles}>
+                {boxElements}
+            </div>
         </main>
     )
 }
