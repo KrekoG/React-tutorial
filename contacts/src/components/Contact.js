@@ -1,22 +1,27 @@
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faPhone, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faPhone, faEnvelope, faStar } from '@fortawesome/free-solid-svg-icons'
 
-export default function Contact({name, phone, email, img}) {
+import Star from './Star'
+
+export default function Contact(props) {
+    const [info, setInfo] = React.useState(props)
+
+    function toggleFavorite() {
+        setInfo(prevInfo => ({...prevInfo, isFavorite: !prevInfo.isFavorite}))
+    }
+
     return (
-        <div className="contact">
-            <img
-                className="contact-img"
-                src={img}
-            />
-            <h2 className="contact-name">{name}</h2>
+        <div className={`contact ${info.isFavorite ? "favorite-contact" : "non-favorite-contact"}`}>
+            <img className="contact-img" src={info.img} />
+            <h2 className="contact-name">{info.name} <Star isFilled={info.isFavorite} handleClick={toggleFavorite} /></h2>
             <div>
                 <FontAwesomeIcon className="contact-icon" icon={faPhone} />
-                {phone}
+                {info.phone}
             </div>
             <div>
                <FontAwesomeIcon className="contact-icon" icon={faEnvelope} />
-               {email}
+               {info.email}
             </div>
         </div>
     )

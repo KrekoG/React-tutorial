@@ -1,0 +1,13 @@
+$background-colour: #E8DCCA;
+$font: darken($background-colour, 55%);
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: $font;
+    margin: 0;
+    background-color: $background-colour;
+}

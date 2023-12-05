@@ -1,0 +1,27 @@
+$border-colour: rgb(118, 118, 118);
+
+body {
+    font-family: 'Poppins', sans-serif;
+}
+
+main, form, fieldset {
+    display: flex;
+    flex-direction: column;
+}
+
+.input-field {
+    margin-bottom: 4px;
+    padding: 5px;
+    border-radius: 6px;
+    border: $border-colour solid 1px;
+    font-size: 1rem;
+}
+
+.select-label {
+    margin-bottom: 4px;
+    padding: 5px;
+}
+
+button {
+    display: block;
+}

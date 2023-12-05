@@ -1,3 +1,5 @@
+$favorite-color: #DDDD33;
+
 body {
     background-color: #DDDDDD;
 }
@@ -29,4 +31,16 @@ body {
     height: 200px;
     width: 200px;
     border-radius:5px;
+}
+
+.contact-favorite-icon {
+    color:$favorite-color;
+}
+
+.favorite-contact {
+    order:1;
+}
+
+.non-favorite-contact {
+    order:2;
 }
