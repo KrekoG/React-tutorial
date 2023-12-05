@@ -25,6 +25,31 @@
     border-width: 0px;
 }
 
+.image-container {
+    position:relative;
+}
+
+@mixin meme-text {
+    position:absolute;
+    width: 100%;
+    left: 0;
+    text-align: center;
+    font-size: 3.5rem;
+    font-weight:700;
+    color: $meme-text-colour;
+    -webkit-text-stroke: 2px black; /* width and color */
+}
+
+.top-text {
+    @include meme-text;
+    top:10%;
+}
+
+.bottom-text {
+    @include meme-text;
+    bottom:10%;
+}
+
 .memage {
     margin-top: 15px;
     max-width:100%;

@@ -4,11 +4,15 @@ import memesData from '../../memesData.js'
 export default function Meme() {
     const [allMemesImages, setAllMemesImages] = React.useState(memesData)
     const [meme, setMeme] = React.useState({
-        topText: "",
-        bottomText: "",
+        topText: "Top Text",
+        bottomText: "Bottom Text",
         randomImage: ""
     });
 
+    function handleChange(event) {
+        const {name, value} = event.target
+        setMeme(prev => ({...prev, [name]: value}))
+    }
 
     function buttonClickHandler() {
         const memes = allMemesImages.data.memes;
@@ -20,11 +24,17 @@ export default function Meme() {
         <section>
             <div className="controls-text-container">
                 <input
+                    onChange={handleChange}
+                    value={meme.topText}
+                    name="topText"
                     className="controls-text"
                     type="text"
                     placeholder="Top text"
                 />
                 <input
+                    onChange={handleChange}
+                    value={meme.bottomText}
+                    name="bottomText"
                     className="controls-text"
                     type="text"
                     placeholder="Bottom text"
@@ -37,7 +47,11 @@ export default function Meme() {
                 value="Get a new meme image 🖼️"
             />
 
-            <img className="memage" src={meme.randomImage} />
+            <div className="image-container">
+                <img className="memage" src={meme.randomImage} />
+                <span className="top-text">{meme.topText}</span>
+                <span className="bottom-text">{meme.bottomText}</span>
+            </div>
         </section>
     )
 }
