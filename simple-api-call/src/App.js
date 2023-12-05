@@ -6,15 +6,16 @@ export default function App() {
     const [starWarsData, setStarWarsData] = React.useState({})
     const [count, setCount] = React.useState(0)
 
+    function handleClick() {
+        setCount(prev => prev + 1)
+    }
+
     React.useEffect(() => {
         fetch("https://swapi.dev/api/people/1")
             .then(res => res.json())
             .then(data => setStarWarsData(data))
+        console.log("Effect function ran!");
     }, [count])
-
-    function handleClick() {
-        setCount(prev => prev + 1)
-    }
 
     console.log("A render happened!")
 
