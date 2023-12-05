@@ -23,6 +23,11 @@ export default function App() {
         )
     }
 
+    function handleSubmit(event) {
+        event.preventDefault()
+        console.log(formData)
+    }
+
     const colourOptions = ["red", "orange", "yellow", "green", "blue", "indigo", "violet", "pink"].map(
         colour =>
         <option
@@ -36,7 +41,7 @@ export default function App() {
     return (
         <main>
             <h1>Form practice</h1>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <input
                     className="input-field"
                     type="text"
@@ -126,6 +131,7 @@ export default function App() {
                     <option value="">Please select a colour</option>
                     {colourOptions}
                 </select>
+                <button className="input-field">Submit</button>
             </form>
             <button
                 className="input-field"
