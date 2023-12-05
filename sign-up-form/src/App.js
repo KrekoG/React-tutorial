@@ -10,17 +10,19 @@ export default function App() {
     })
 
     function handleChange(event) {
-        const target = event.target
-        setFormData(prev => ({...prev, [target.name]: target.type === "checkbox" ? target.checked : target.value}))
+        const {name, value, type, checked} = event.target
+        setFormData(prev => ({...prev, [name]: type === "checkbox" ? checked : value}))
     }
 
     function handleSubmit(event) {
         event.preventDefault();
-        console.log(
-            formData.password === formData.confirmPassword
-            ? "Successfully signed up"
-            : "passwords do not match"
-        )
+
+        if (formData.password === formData.confirmPassword) {
+            console.log("Successfully signed up")
+        } else {
+            console.log("passwords do not match")
+            return
+        }
 
         if (formData.joinMailingList) {
             console.log("Thanks for signing up for our mailing list!")
@@ -63,7 +65,7 @@ export default function App() {
                     />
                     <label htmlFor="joinMailingList">Would you like to join our mailing list?</label>
                 </span>
-                <button className="input-field">Submit</button>
+                <button className="input-field">Sign up</button>
             </form>
         </main>
     )
